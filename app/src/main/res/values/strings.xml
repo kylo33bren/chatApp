@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">chatApp</string>
+    <string name="user_name">User Name</string>
+    <string name="create_account">Create Account</string>
+    <string name="longin">Longin</string>
+    <string name="password">Password</string>
+    <string name="txt_log_out">Login Out</string>
+    <string name="txt_save_changes">Save Changes</string>
+</resources>
