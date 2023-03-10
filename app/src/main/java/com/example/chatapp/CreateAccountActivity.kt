@@ -11,7 +11,8 @@ class CreateAccountActivity : AppCompatActivity(){
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
     private lateinit var buttonSignUp: Button
-    private lateinit var mAuth: FirebaseAuth
+
+    var auth: FirebaseAuth?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)

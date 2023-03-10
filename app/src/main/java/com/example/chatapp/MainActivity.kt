@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val buttonLongin=findViewById<View>(R.id.buttonLongin)
         buttonLongin.setOnClickListener {
             //val intent=Intent(this,ChatActivity::class.java)
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         buttonCreateAccount.setOnClickListener{
 
             val intent= Intent(this,CreateAccountActivity::class.java)
-            startService(intent)
+            startActivity(intent)
         }
 
 
