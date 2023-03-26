@@ -31,12 +31,12 @@
         android:contentDescription="@string/app_name"/>
 
     <EditText
-        android:id="@+id/editTextUserName"
+        android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/user_name"
-        android:inputType="textPersonName"
+        android:hint="@string/your_email"
+        android:inputType="textEmailAddress"
         android:autofillHints="name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -54,9 +54,9 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextUserName"
-        app:layout_constraintStart_toStartOf="@+id/editTextUserName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
