@@ -2,13 +2,11 @@ package com.example.chatapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.StateSet.TAG
+import com.example.chatapp.ui.ChatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -32,22 +30,29 @@ class MainActivity : AppCompatActivity() {
         val password=edtPassword.text.toString()
         val buttonLongin=findViewById<View>(R.id.buttonLongin)
         buttonLongin.setOnClickListener {
-            //val intent=Intent(this,ChatActivity::class.java)
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        val user = auth.currentUser
-                        updateUI(user)
 
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w(TAG, "signInWithEmail:failure", task.exception)
-                        Toast.makeText(baseContext, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show()
-                        updateUI(null)
-                    }
-                }
+            //val intent=Intent(this,ChatActivity::class.java)
+//            auth.signInWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(this) { task ->
+//                    if (task.isSuccessful) {
+//                        // Sign in success, update UI with the signed-in user's information
+//                        val user = auth.currentUser
+//                        val intent=Intent(this,ChatActivity::class.java)
+//                        startActivity(intent)
+//
+//                    } else {
+//                        // If sign in fails, display a message to the user.
+//                        Log.w(TAG, "signInWithEmail:failure", task.exception)
+//                        Toast.makeText(baseContext, "Authentication failed.",
+//                            Toast.LENGTH_SHORT).show()
+//
+//                    }
+//                }
+            buttonCreateAccount=findViewById<View>(R.id.buttonLongin) as Button
+            this.buttonCreateAccount.setOnClickListener{
+                val intent= Intent(this, ChatActivity::class.java)
+                startActivity(intent)
+            }
 
         }
         buttonCreateAccount=findViewById<View>(R.id.buttonCreateAccount) as Button
@@ -59,7 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun updateUI(user: FirebaseUser?) {
+
+    private fun login(user: FirebaseUser?) {
         val email=edtEmail.text.toString()
         val password=edtPassword.text.toString()
         if(email.isEmpty())
@@ -72,21 +78,12 @@ class MainActivity : AppCompatActivity() {
         }
         if (user != null) {
             if (user.email==email) {
-                val intent=Intent(this,ChatActivity::class.java)
-                startActivity(intent)
+
+
             }
         }else
         {
             edtEmail.error="Please make sure you input correctly"
-        }
-    }
-
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if(currentUser != null){
-            //reload()
         }
     }
 

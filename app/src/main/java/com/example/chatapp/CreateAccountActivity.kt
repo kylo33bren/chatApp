@@ -32,17 +32,17 @@ class CreateAccountActivity : AppCompatActivity(){
     }
 
     private fun signUp() {
-        //edtUserName=findViewById(R.id.editTextUserName)
+        edtUserName=findViewById(R.id.editTextUserName)
         edtPassword=findViewById(R.id.editTextPassword)
         edtEmail=findViewById(R.id.editTextEmail)
 
-        //val username=edtUserName.text.toString()
+        val username=edtUserName.text.toString()
         val email=edtEmail.text.toString()
         val password=edtPassword.text.toString()
-//        if(username.isEmpty())
-//        {
-//            edtUserName.error="Please enter your name"
-//        }
+        if(username.isEmpty())
+        {
+            edtUserName.error="Please enter your name"
+        }
         if(email.isEmpty())
         {
             edtEmail.error="Please enter your email"
