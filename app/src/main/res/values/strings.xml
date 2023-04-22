@@ -2,10 +2,12 @@
     <string name="app_name">chatApp</string>
     <string name="user_name">User Name</string>
     <string name="create_account">Create Account</string>
-    <string name="longin">Longin</string>
+    <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="txt_log_out">Login Out</string>
     <string name="txt_save_changes">Save Changes</string>
     <string name="forget_password">forget password?</string>
     <string name="your_email">Your Email</string>
+    <string name="already">Already have an account?<b> Login</b></string>
+    <string name="not_have">Don\'t have an Account?<b> Create New</b></string>
 </resources>
